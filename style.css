@@ -1,4 +1,6 @@
+/* --------------------------- */
 /* ----- Global variable ----- */
+/* --------------------------- */
 :root {
 	--very-dark-blue: hsl(233, 47%, 7%);
 	--dark-desaturated-blue: hsl(244, 38%, 16%);
@@ -8,19 +10,21 @@
 
 
 
-/* ----- General CSS ----- */
+/* ---------------------- */
+/* ----- Global CSS ----- */
+/* ---------------------- */
 
 body, html {
-  height: 100%;
-  width: 100%;
+	height: 100%;
+	width: 100%;
 }
 
 /* Horizontal center align */
 h1, h2 {
-  font-variant: small-caps;
-  justify-self: center;
+	font-variant: small-caps;
+	justify-self: center;
 }
-h1 {font-size: 50px}
+h1 {font-size: 60px}
 h2 {font-size: 40px}
 h3 {font-size: 30px}
 h4 {font-size: 22px}
@@ -46,20 +50,23 @@ a {text-decoration: none}
 /* Set link hover style */
 a:hover {color: var(--dark-desaturated-blue)}
 
+ul li {background-color: purple} /* FIXME */ 
+
 /* Horizontal align for HTML lists (ul / li) */
 .inline_li {
 	display: flex;
 	justify-content: space-around; /* horizontal */ 
 	align-items: center; /* Vertical */
 	/* FIXME */
-   	background-color: red;
+	background-color: red;
 }
 .inline_li li {
-   display: inline;
-   text-align: center;
+	display: inline;
+	text-align: center;
 	/* FIXME */
-   background-color: blue;
+	background-color: blue;
 }
+
 
 
 /* -------------------- */
@@ -90,6 +97,7 @@ header, footer, .main {
 }
 
 
+
 /* ---------------------- */
 /* ----- Header CSS ----- */
 /* ---------------------- */
@@ -106,13 +114,14 @@ header {
 }
 
 
+
 /* ---------------------------- */
 /* ----- Page Content CSS ----- */
 /* ---------------------------- */
 .main {
 	grid-area: main;
 	display: grid;
-  	row-gap: 20px;
+	row-gap: 20px;
 	/* FIXME */
 	background-color: blue;
 }
@@ -121,36 +130,46 @@ header {
 .main div {background-color: green} /* FIXME */
 
 /* --- About part --- */
+.about p{
+	text-align: justify;
+	text-justify: inter-word;
+}
 
 /* --- Skills part --- */
 
-/* Organize skills and projects parts */
 .skills_list, .project_list{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    ". . ."
-    ". . .";
+	/* Organize skills and projects parts */
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	gap: 0px 0px;
+	grid-template-areas:
+		". . ."
+		". . .";
+}
+.skills_list li, .project_list li {
+	/* horizontal centered */
+	display: flex;
+	justify-content: space-around;
 }
 
 /* --- History part --- */
 
-/* Organize history part */
 .history {
-  /* already displayed as grid */
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: 1fr .4fr 1fr;
-  gap: 30px 0px;
-  grid-template-areas:
-    "history_title ."
-    "history_title ."
-    "history_title .";
+	/* Organize history part */
+	/* already displayed as grid */
+	grid-template-columns: 1fr 2fr;
+	grid-template-rows: 1fr .4fr 1fr;
+	gap: 30px 0px;
+	grid-template-areas:
+		"history_title ."
+		"history_title ."
+		"history_title .";
 }
 .history_title {grid-area: history_title}
 
 /* --- Project part --- */
+/* TODO */
 
 
 
