@@ -15,76 +15,116 @@ body, html {
   width: 100%;
 }
 
+/* Horizontal center align */
 h1, h2 {
-	font-weight: 700;
-	justify-self: center;
+  font-variant: small-caps;
+  justify-self: center;
 }
+h1 {font-size: 50px}
+h2 {font-size: 40px}
+h3 {font-size: 30px}
+h4 {font-size: 22px}
+h5 {font-size: 18px}
+
+/* Set title font */
 h1, h2, h3, h4, h5 {
 	font-family: 'Work Sans', 'Quicksand', serif;
+	font-weight: 700;
+	color: white;
 }
+
+/* Set text font */
 p, a, li {
 	font-family: 'Source Sans Pro', serif;
 	color: white;
+	font-size: 16px;
 }
+
+/* Suppress base link underline */
+a {text-decoration: none}
+
+/* Set link hover style */
 a:hover {color: var(--dark-desaturated-blue)}
 
-
+/* Horizontal align for HTML lists (ul / li) */
 .inline_li {
 	display: flex;
 	justify-content: space-around; /* horizontal */ 
 	align-items: center; /* Vertical */
+	/* FIXME */
    	background-color: red;
 }
-
 .inline_li li {
    display: inline;
    text-align: center;
+	/* FIXME */
    background-color: blue;
 }
 
-a {text-decoration: none}
 
+/* -------------------- */
+/* ----- Page CSS ----- */
+/* -------------------- */
+
+/* Full page div */
 .page {
+	/* Force full page covering */
 	min-height: 100vh;
+	/* Use grid to organise Header, Main and Footer */
 	display: grid;
-	grid-template-columns: 50px;
-	grid-template-rows: auto;
 	grid-template-areas: 
 	"header header"
 	"main main"
 	"footer footer";
-	justify-items: stretch;
-	justify-content: stretch;
 }
 
+/* Resize and organize as grid page part */
 header, footer, .main {
 	padding: 0 15% 0 15%;
 	display: grid;
-	justify-items: stretch;
-	justify-content: stretch;
 }
-
+/* If we are on a mobile, suppress the previous padding */
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
   header, footer, .main {padding: 0}
 }
 
+
+/* ---------------------- */
+/* ----- Header CSS ----- */
+/* ---------------------- */
+
 header {
-	background-color: red;
+	/* Sticky header */
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	/* Base position */
 	grid-area: header;
+	/* FIXME */
+	background-color: red;
 }
 
 
+/* ---------------------------- */
+/* ----- Page Content CSS ----- */
+/* ---------------------------- */
 .main {
-	background-color: blue;
 	grid-area: main;
 	display: grid;
   	row-gap: 20px;
+	/* FIXME */
+	background-color: blue;
 }
-
 .main div {display: grid}
-.main div {background-color: green}
 
+.main div {background-color: green} /* FIXME */
+
+/* --- About part --- */
+
+/* --- Skills part --- */
+
+/* Organize skills and projects parts */
 .skills_list, .project_list{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -95,8 +135,11 @@ header {
     ". . .";
 }
 
+/* --- History part --- */
+
+/* Organize history part */
 .history {
-  display: grid;
+  /* already displayed as grid */
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr .4fr 1fr;
   gap: 30px 0px;
@@ -105,17 +148,25 @@ header {
     "history_title ."
     "history_title .";
 }
+.history_title {grid-area: history_title}
 
-.history_title { grid-area: history_title; }
+/* --- Project part --- */
 
-footer {
-	background-color: green;
-	grid-area: footer;
-}
 
+
+/* ---------------------- */
+/* ----- Footer CSS ----- */
+/* ---------------------- */
+footer {grid-area: footer}
 footer a, footer p {justify-self: center}
 
+footer {background-color: green} /* FIXME */
 
+
+
+/* ---------------------- */
+/* ----- Random CSS ----- */
+/* ---------------------- */
 /*
 a[href^="https"]::before {
   content: "🔗 ";
