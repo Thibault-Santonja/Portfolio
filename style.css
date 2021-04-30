@@ -2,10 +2,13 @@
 /* ----- Global variable ----- */
 /* --------------------------- */
 :root {
-	--very-dark-blue: hsl(233, 47%, 7%);
-	--dark-desaturated-blue: hsl(244, 38%, 16%);
-	--soft-violet: hsl(277, 64%, 61%);
-	--heading: hsl(0, 0%, 100%);
+	--oxford-blue: #001F39ff;
+	--lapis-lazuli: #005B99ff;
+	--pewter-blue: #82A9B5ff;
+	--silver-metallic: #A2A6ADff;
+	--silver-pink: #BDA8A7ff;
+
+	--big-icon-size: 150px;
 }
 
 
@@ -48,7 +51,7 @@ p, a, li {
 a {text-decoration: none}
 
 /* Set link hover style */
-a:hover {color: var(--dark-desaturated-blue)}
+a:hover {color: var(--lapis-lazuli)}
 
 ul li {background-color: purple} /* FIXME */ 
 
@@ -66,6 +69,8 @@ ul li {background-color: purple} /* FIXME */
 	/* FIXME */
 	background-color: blue;
 }
+
+.space_between {justify-content: space-between}
 
 
 
@@ -111,6 +116,7 @@ header {
 	grid-area: header;
 	/* FIXME */
 	background-color: red;
+	z-index: 100;
 }
 
 
@@ -118,22 +124,38 @@ header {
 /* ---------------------------- */
 /* ----- Page Content CSS ----- */
 /* ---------------------------- */
+.main h2 {padding-bottom: 20px}
 .main {
 	grid-area: main;
 	display: grid;
 	row-gap: 20px;
-	/* FIXME */
-	background-color: blue;
+	/* #010A2D, #0C1640, #1A2653, #2D3585, #4D3A81, #784284 */
+	background: linear-gradient(175deg, black, #000F19, #010A2D, #0C1640, #203585, #82A9B5, #D0E0FA);*
 }
 .main div {display: grid}
 
 .main div {background-color: green} /* FIXME */
 
 /* --- About part --- */
-.about p{
+.about p {
 	text-align: justify;
 	text-justify: inter-word;
 }
+.about li {
+	height: calc(var(--big-icon-size) / 2);
+	width: calc(var(--big-icon-size) / 2);
+	border-radius: calc(var(--big-icon-size) / 4);
+}
+/* If we are on a mobile, divide size */
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .about li {
+  	height: calc(100vw / 6);
+	width:  calc(100vw / 6);
+	border-radius:  calc(100vw / 12);
+  }
+}
+
 
 /* --- Skills part --- */
 
@@ -142,7 +164,7 @@ header {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-rows: 1fr 1fr;
-	gap: 0px 0px;
+	gap: 20px 0px;
 	grid-template-areas:
 		". . ."
 		". . .";
@@ -151,6 +173,41 @@ header {
 	/* horizontal centered */
 	display: flex;
 	justify-content: space-around;
+ 	justify-self: center;
+	height: var(--big-icon-size);
+	width: var(--big-icon-size);
+	border-radius: calc(var(--big-icon-size) / 2);
+}
+.skills_list img, .project_list img {
+	z-index: 1;
+	height: var(--big-icon-size);
+	width: var(--big-icon-size);
+	border-radius: calc(var(--big-icon-size) / 2);
+}
+.skills_list div, .project_list div {
+	background-color: rgba(0,0,0,0);
+	z-index: 2;
+	position: absolute;
+	height: var(--big-icon-size);
+	width: var(--big-icon-size);
+}
+.skills_list p, .project_list p {visibility: hidden} 
+.skills_list li:hover p, .project_list li:hover p {
+	background-color: rgba(0,0,0,.5);
+	visibility: visible;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: calc(var(--big-icon-size) / 2);
+}
+/* If we are on a mobile, divide size */
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .skills_list li, .project_list li, .skills_list img, .project_list img, .skills_list div, .project_list div, .skills_list li:hover p, .project_list li:hover p {
+  	height: calc(100vw / 4);
+	width: calc(100vw / 4);
+	border-radius: calc(100vw / 8);
+  }
 }
 
 /* --- History part --- */
@@ -176,8 +233,12 @@ header {
 /* ---------------------- */
 /* ----- Footer CSS ----- */
 /* ---------------------- */
-footer {grid-area: footer}
+footer {
+	grid-area: footer;
+	padding-top: 20px;
+}
 footer a, footer p {justify-self: center}
+footer ul {margin: 10px 0 10px 0}
 
 footer {background-color: green} /* FIXME */
 
