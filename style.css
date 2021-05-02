@@ -91,16 +91,14 @@ ul li {background-color: purple} /* FIXME */
 }
 
 /* Resize and organize as grid page part */
-header, footer, .main {
-	padding: 0 15% 0 15%;
-	display: grid;
-}
-/* If we are on a mobile, suppress the previous padding */
-@media only screen and (max-width: 768px) {
+header, footer, .main {display: grid}
+header, footer, .about, .skills, .history, .portfolio {padding: 0 15% 0 15%}
+/* If we are on a mobile (768px), suppress the previous padding */
+@media only screen and (max-width: 920px) {
   /* For mobile phones: */
-  header, footer, .main {padding: 0}
+  header, footer, .main div {padding: 0}
 }
-
+.main div {padding-bottom: 20px}
 
 
 /* ---------------------- */
@@ -114,12 +112,34 @@ header {
 	top: 0;
 	/* Base position */
 	grid-area: header;
+	/* organization */
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr;
+	gap: 0px 0px;
+	grid-template-areas:
+    	". .";
 	/* FIXME */
 	background-color: red;
 	z-index: 100;
 }
 
+header nav {
+	padding: 20px 0 20px 0;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr;
+	gap: 0px 0px;
+	grid-template-areas:
+		". . . .";
+}
 
+header div {
+	display: flex;
+	align-items: center;
+}
+header div a {font-size: 30px}
+header a {font-variant: small-caps}
 
 /* ---------------------------- */
 /* ----- Page Content CSS ----- */
@@ -130,24 +150,28 @@ header {
 	display: grid;
 	row-gap: 20px;
 	/* #010A2D, #0C1640, #1A2653, #2D3585, #4D3A81, #784284 */
-	background: linear-gradient(175deg, black, #000F19, #010A2D, #0C1640, #203585, #82A9B5, #D0E0FA);*
+	background: linear-gradient(175deg, black, #000F19, #010A2D, #0C1640, #203585, #82A9B5, #D0E0FA);
 }
 .main div {display: grid}
 
-.main div {background-color: green} /* FIXME */
+.main div {background-color: rgba(0,255,0,.2);} /* FIXME */
 
 /* --- About part --- */
 .about p {
 	text-align: justify;
 	text-justify: inter-word;
+	padding-bottom: 20px;
 }
 .about li {
 	height: calc(var(--big-icon-size) / 2);
 	width: calc(var(--big-icon-size) / 2);
 	border-radius: calc(var(--big-icon-size) / 4);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 /* If we are on a mobile, divide size */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 920px) {
   /* For mobile phones: */
   .about li {
   	height: calc(100vw / 6);
@@ -201,7 +225,7 @@ header {
 	border-radius: calc(var(--big-icon-size) / 2);
 }
 /* If we are on a mobile, divide size */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 920px) {
   /* For mobile phones: */
   .skills_list li, .project_list li, .skills_list img, .project_list img, .skills_list div, .project_list div, .skills_list li:hover p, .project_list li:hover p {
   	height: calc(100vw / 4);
@@ -216,7 +240,7 @@ header {
 	/* Organize history part */
 	/* already displayed as grid */
 	grid-template-columns: 1fr 2fr;
-	grid-template-rows: 1fr .4fr 1fr;
+	grid-template-rows: 1fr .5fr 1.1fr;
 	gap: 30px 0px;
 	grid-template-areas:
 		"history_title ."
@@ -224,10 +248,15 @@ header {
 		"history_title .";
 }
 .history_title {grid-area: history_title}
+.history_element ul {padding-bottom: 20px}
+
+
+.history_element {border: 5px solid red}
+.history_element {padding: 0}
+.history_element h4 {border: 5px solid purple}
 
 /* --- Project part --- */
-/* TODO */
-
+/*.portfolio ul {margin-bottom: 20px}*/
 
 
 /* ---------------------- */
