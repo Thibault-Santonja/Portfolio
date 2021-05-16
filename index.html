@@ -22,7 +22,7 @@
 </head>
 <body>
   <div class="page">
-    <header>
+    <header class="side-margin-15">
       <div><a href="#top">Thibault Santonja</a></div>
       <nav class="inline_li">
         <a href="#to_skills">Skills</a>
@@ -34,11 +34,22 @@
 
     <div class="main" id="top">
 
-      <h1>Thibault <strong>Santonja</strong></h1>
-
       <!-- Me -->
-      <div class="about">
-        <h2>About</h2>
+      <div class="about side-margin-15">
+          <h1>Hi there !</h1>
+
+          <div class="satellite">
+            <div class="satellite_system">
+              <div class="satellite_orbit">
+                <div class="satellite_bubble"></div>
+              </div>
+              <div class="satellite_content">
+                <img src="./img/900_me.png" alt="Me">
+              </div>
+            </div>
+          </div>
+
+        <!--<h2>About</h2>-->
         <p>Curious, imaginative and passionate, I like to discover new things and in particular, the scientific world in general. Since I was very young, I have wanted to work in the space sector and it was with this in mind that I wanted to work as apprentice in this field during my training at UTC. It is during this 3-year experience that I worked in satellite pre-projects on innovative projects such as CHIME (ESA's Copernicus program for hyperspectral imaging), Daedalus (ESA's atmospheric analysis project), EnVision (ESA's project to study Venus) or on ESPRIT for the Gateway (space station around the Moon). I realized different tools (in Python with Jupyter notebooks or in MATLAB) in order to perform studies of these projects (using MBSE principle).</p>
         <p>This experience gave me the opportunity to study and work on the Blockchain technology, applied to space applications in Singapore, within the S4TIN (Smart Small Satellite Systems Thales in NTU) service in 2019.</p>
         <p>Beside that, art is a field that fascinates me. In this context, I made short films in high school, I do a lot of photography since 2018 and I am working on a video game project in order to discover and use the Unreal Engine 4, as well as Blender.</p>
@@ -53,134 +64,224 @@
       </div>
 
       <!-- Skills -->
-      <div class="skills">
-        <h2 id="to_skills">Skills</h2>
+      <div class="skills side-margin-15 anchor-position" id="to_skills">
+        <h2>Skills</h2>
         <ul class="skills_list">
           <li>
             <img src="img/1200_python.png" alt="Python">
-            <div><p>Python</p></div>
+            <div>
+              <h5>Python</h5>
+              <p>Pandas, Numpy</p>
+              <p>Django</p>
+            </div>
           </li>
           <li>
             <img src="img/1200_java.png" alt="Java">
-            <div><p>Java</p></div>
+            <div>
+              <h5>Java</h5>
+              <p>Spring</p>
+            </div>
           </li>
           <li>
             <img src="img/1024_javascript.png" alt="JavaScript">
-            <div><p>JavaScript</p></div>
+            <div>
+              <h5>JavaScript</h5>
+              <p>React</p>
+            </div>
           </li>
           <li>
             <img src="img/1024_git.png" alt="Integration">
-            <div><p>Integration</p></div>
+            <div>
+              <h5>Integration</h5>
+              <p>git, unittest</p>
+            </div>
           </li>
           <li>
             <img src="img/930_database.png" alt="Database">
-            <div><p>Database</p></div>
+            <div>
+              <h5>Database</h5>
+              <p>Elasticsearch, Mongo</p>
+              <p>PostGreSQL</p>
+            </div>
           </li>
           <li>
-            <div><p>MBSE</p></div>
+            <img src="img/emf_logo.png" alt="EclipseEMF">
+            <div>
+              <h5>MBSE</h5>
+              <p>Ecore, Sirius, Acceleo</p>
+              <p>Capella</p>
+            </div>
           </li>
         </ul>
       </div>
       
       <!-- History -->
-      <div class="history">
-        <h2 id="to_history" class="history_title">History</h2>
-        <div class="history_element">
-          <h4>Software development for scientific satellite pre-projects studies (as apprentice)</h4>
-          <h5>Thales Alenia Space</h5>
-          <ul class="inline_li space_between">
-            <li>Sept 2017 - Sept 2020</li>
-            <li>•</li>
-            <li>Cannes (FRANCE)</li>
-          </ul>
-          <div>
-            <p>Development and maintenance of simulation tools to perform satellite pre-sizing :</p>
-            <ul>
-              <li>- Development of an orbit simulation software in MATLAB</li>
-              <li>- Create an IU with Eclipse EMF (Ecore, Sirius and Acceleo) to modeling the mission</li>
-              <li>- Software trainings for my department</li>
-            </ul>
-            <p>Data analysis / Simulations’ results study :</p>
-            <ul>
-              <li>- Store simulation data on an Elasticsearch database</li>
-              <li>- Using Grafana for the visualization</li>
-              <li>- Analysis in Python using Jupyter notebooks, and Pandas and Numpy library for data manipulation and Plotly for visualization</li>
-              <li>- Optimisation using Python (SciPy) </li>
-            </ul>
+      <div class="history side-margin-15 anchor-position" id="to_history">
+        <h2 class="history_title">History</h2>
+
+        <div class="history_details">
+          <div class="history_element">
+            <div class="history_element_list">
+              <div class="history_element_point"><div class="draw-circle-20"></div></div>
+              <div class="history_element_line"></div>
+            </div>
+            <div class="history_element_content">
+              <h4>Software development for scientific satellite pre-projects studies (as apprentice)</h4>
+              <h5>Thales Alenia Space</h5>
+              <!--
+              <ul class="inline_li space_between">
+                <h5>Thales Alenia Space (Cannes, France)</h5>
+                <h5>Sept 2017 - Sept 2020</h5>
+              </ul>
+            -->
+              <ul class="inline_li left_align">
+                <li>Sept 2017 - Sept 2020</li>
+                <li>•</li>
+                <li>Cannes (FRANCE)</li>
+              </ul>
+              <div>
+                <p>Development and maintenance of simulation tools to perform satellite pre-sizing :</p>
+                <ul>
+                  <li>- Development of an orbit simulation software in MATLAB</li>
+                  <li>- Create an IU with Eclipse EMF (Ecore, Sirius and Acceleo) to modeling the mission</li>
+                  <li>- Software trainings for my department</li>
+                </ul>
+                <p>Data analysis / Simulations’ results study :</p>
+                <ul>
+                  <li>- Store simulation data on an Elasticsearch database</li>
+                  <li>- Using Grafana for the visualization</li>
+                  <li>- Analysis in Python using Jupyter notebooks, and Pandas and Numpy library for data manipulation and Plotly for visualization</li>
+                  <li>- Optimisation using Python (SciPy) </li>
+                </ul>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="history_element">
-          <h4>R&D Blockchain for space</h4>
-          <h5>Thales Alenia Space</h5>
-          <ul class="inline_li space_between">
-            <li>July 2019 - Sept 2019</li>
-            <li>•</li>
-            <li>Singapore (SINGAPORE)</li>
-          </ul>
-          <div>
-            <p>Study Blockchain for space applications :</p>
-            <ul>
-              <li>- Blockchain study</li>
-              <li>- Analyze use case feasibility</li>
-              <li>- Blockchain trainings for my service</li>
-            </ul>
+
+          <div class="history_element">
+            <div class="history_element_list">
+              <div class="history_element_point"><div class="draw-circle-20"></div></div>
+              <div class="history_element_line"></div>
+            </div>
+            <div class="history_element_content">
+              <h4>R&D Blockchain for space</h4>
+              <h5>Thales Alenia Space</h5>
+              <ul class="inline_li left_align">
+                <li>July 2019 - Sept 2019</li>
+                <li>•</li>
+                <li>Singapore (SINGAPORE)</li>
+              </ul>
+              <div>
+                <p>Study Blockchain for space applications :</p>
+                <ul>
+                  <li>- Blockchain study</li>
+                  <li>- Analyze use case feasibility</li>
+                  <li>- Blockchain trainings for my service</li>
+                </ul>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="history_element">
-          <h4>M.Sc in computer science (in apprenticeship)</h4>
-          <h5>University of Technology of Compiègne (UTC)</h5>
-          <ul class="inline_li space_between">
-            <li>Sept 2017 - Jan 2021</li>
-            <li>•</li>
-            <li>Compiègne (FRANCE)</li>
-          </ul>
-          <div>
-            <p>Software engineer :</p>
-            <ul>
-              <li>- Relational (SQL) and non-relational databases, realization of a course on Elasticsearch</li>
-              <li>- Web programming in Java (Spring) and JS (React), realization of a QCM website project</li>
-              <li>- Mobile programming with React Native, realization of a mobile inventory management project</li>
-            </ul>
-            <p>Computer science :</p>
-            <ul>
-              <li>- Operational Research, AI & Optimisation</li>
-              <li>- Network & Security</li>
-              <li>- Test & integration</li>
-            </ul>
-            <p>General :</p>
-            <ul>
-              <li>- English, level B2/C1, TOEIC 835</li>
-              <li>- Chinese, level B1</li>
-              <li>- IT project management, realization of an online Othello project</li>
-            </ul>
+
+          <div class="history_element">
+            <div class="history_element_list">
+              <div class="history_element_point"><div class="draw-circle-20"></div></div>
+              <div class="history_element_line"></div>
+            </div>
+            <div class="history_element_content">
+              <h4>M.Sc in computer science (in apprenticeship)</h4>
+              <h5>University of Technology of Compiègne (UTC)</h5>
+              <ul class="inline_li left_align">
+                <li>Sept 2017 - Jan 2021</li>
+                <li>•</li>
+                <li>Compiègne (FRANCE)</li>
+              </ul>
+              <div>
+                <p>Computer science :</p>
+                <ul>
+                  <li>- Operational Research, AI & Optimisation</li>
+                  <li>- Algorithm & Object-Oriented Programming</li>
+                  <li>- Network & Security</li>
+                  <li>- Test & integration</li>
+                </ul>
+                <p>Software engineer :</p>
+                <ul>
+                  <li>- Relational (<strong>Oracle, PostGreSQL</strong>) and non-relational databases, realization of a course on <strong>Elasticsearch</strong></li>
+                  <li>- Web programming in <strong>Java (Spring)</strong> and <strong>JS (React)</strong>, realization of a QCM website project</li>
+                  <li>- Mobile programming with <strong>React Native</strong>, realization of a mobile inventory management project</li>
+                  <li>- Autonomous car with <strong>ROS</strong> and <strong>Python</strong></li>
+                </ul>
+                <p>General :</p>
+                <ul>
+                  <li>- <strong>Math</strong> & <strong>Statistics</strong></li>
+                  <li>- <strong>English</strong>, level B2/C1, TOEIC 835</li>
+                  <li>- <strong>Chinese</strong>, level B1</li>
+                  <li>- IT project management, realization of an online Othello project</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       
       <!-- Portfolio -->
-      <div class="portfolio">
-        <h2 id="to_portfolio">Portfolio</h2>
+      <div class="portfolio side-margin-15 anchor-position" id="to_portfolio">
+        <h2>Portfolio</h2>
         <ul class="project_list">
-          <li><div><p>Project Web</p></div></li>
-          <li><div><p>Project UE4</p></div></li>
-          <li><div><p>Project Photography</p></div></li>
-          <li><div><p>Project Rocket</p></div></li>
-          <li><div><p>Project Blender & 3D</p></div></li>
-          <li><div><p>Project Ebook</p></div></li>
+          <li>
+            <img src="img/900_WWW.png" alt="web">
+            <div>
+              <h5>Web projects</h5>
+              <p>Work in Progress</p>
+            </div>
+          </li>
+          <li>
+            <img src="img/1200_Unreal_Engine.png" alt="Unreal_Engine">
+            <div>
+              <h5>Unreal Engine projects</h5>
+              <p>Work in Progress</p>
+            </div>
+          </li>
+          <li>
+            <img src="img/900_photo.png" alt="photo">
+            <div>
+              <h5>Photography Portfoliio</h5>
+              <p>Work in Progress</p>
+            </div>
+          </li>
+          <li>
+            <img src="img/900_rocket.png" alt="rocket">
+            <div>
+              <h5>Rocket development</h5>
+              <p>Work in Progress</p>
+            </div>
+          </li>
+          <li>
+            <img src="img/900_Blender.png" alt="blender">
+            <div>
+              <h5>Blender & 3D Portfolio</h5>
+              <p>Work in Progress</p>
+            </div>
+          </li>
+          <li>
+            <img src="img/TeXShop_icon.png" alt="ebook">
+            <div>
+              <h5>Writed Ebooks</h5>
+              <p>Work in Progress</p>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
 
-    <footer>
+    <footer class="side-margin-15">
       <a href="mailto:thibault.santonja@gmail.com">thibault.santonja@gmail.com</a>
       <ul class="inline_li">
-        <li><a href="https://github.com/Thibault-Santonja">GitHub</a></li>
-        <li><a href="https://www.instagram.com/thibault__san/">Instagram</a></li>
-        <li><a href="https://www.linkedin.com/in/thibaultsantonja/?locale=en_US">LinkedIn</a></li>
-        <li><a href="#">Carrd</a></li>
-        <li><a href="tel:+33-6-45-07-59-96">Phone</a></li>
+        <li><a href="https://github.com/Thibault-Santonja"><img src="img/900_Github.png" alt="GitHub"></a></li>
+        <li><a href="https://www.instagram.com/thibault__san/"><img src="img/900_Instagram.png" alt="Instagram"></a></li>
+        <li><a href="https://www.linkedin.com/in/thibaultsantonja/?locale=en_US"><img src="img/900_linkedin.png" alt="LinkedIn"></a></li>
+        <li><a href="#"><img src="img/1024_carrd.png" alt="Carrd"></a></li>
+        <li><a href="tel:+33-6-45-07-59-96"><img src="img/900_phone.png" alt="Phone"></a></li>
       </ul>
-      <p>© Thibault Santonja</p>
+      <p>© Thibault Santonja 2021</p>
     </footer>
   </div>
 </body>
