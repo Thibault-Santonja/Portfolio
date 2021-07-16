@@ -414,6 +414,64 @@ header a {font-variant: small-caps}
 /*.project_list {margin-top: 6rem}*/
 .portfolio {margin-bottom: 12rem}
 
+
+.portfolio-rows {
+  display: grid; 
+  grid-template-columns: 6em auto; 
+  grid-template-rows: auto auto auto; 
+  gap: 2.4em 0px; 
+  grid-template-areas: 
+    "portfolio-row-title ."; 
+}
+
+.portfolio-row-title {
+  display: grid; 
+  grid-template-columns: 1fr; 
+  grid-template-rows: 1.2em 1fr; 
+  gap: 2.4em 0px; 
+  grid-template-areas: 
+    "."
+    "."; 
+}
+
+.portfolio-row-title h5 {text-align: center}
+.vertical-line {
+	border: 1px solid greenyellow; /* FIXME Color to define */
+	top: var(--history-point-margin);
+	width: 0%;
+	justify-self: center;
+}
+
+.portfolio-rows article {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: start;
+  align-content: start
+	background-color: blue;
+}
+.portfolio-rows section {
+  display: block;
+}
+
+.portfolio-rows section img, .img-assembly{
+  margin: auto;
+  display: block;
+	height: var(--big-icon-size);
+	width: var(--big-icon-size);
+}
+
+.portfolio-rows section div {
+	width: calc(1.5 * var(--big-icon-size));
+	text-align: center
+}
+.portfolio-rows section h5 {
+	margin: .9em 0 .6em 0;
+	text-decoration: underline;
+}
+
+
 /* ---------------------- */
 /* ----- Footer CSS ----- */
 /* ---------------------- */
@@ -637,6 +695,50 @@ a[href^="tel"]::before {
 
 
 
+.shaking {
+	-webkit-animation: shaking 3s ease-in-out infinite;
+	-moz-animation: shaking 3s ease-in-out infinite;
+	animation: shaking 3s ease-in-out infinite;
+}
+@keyframes shaking {
+	0% { 
+		-webkit-transform: rotate(5deg); 
+		transform: rotate(5deg);
+	} 
+	50% { 
+		-webkit-transform: rotate(-5deg); 
+		transform: rotate(-5deg);
+	} 
+	100% { 
+		-webkit-transform: rotate(5deg); 
+		transform: rotate(5deg);
+	} 
+}
+
+
+.blinking{
+	-webkit-animation: blinking 3s ease-in-out 0s infinite;
+	-moz-animation: blinking 3s ease-in-out 0s infinite;
+	animation: blinking 3s ease-in-out 0s infinite;
+}
+.img-assembly img:nth-child(2) { animation-delay: 1s }
+
+@keyframes blinking {
+	0% { 
+		opacity: 0;
+	} 
+	20% { 
+		opacity: 1;
+	} 
+	60% { 
+		opacity: 0.0;
+	} 
+	100% { 
+		opacity: 0.0;
+	} 
+}
+
+
 
 .rotate {
 	-webkit-animation: spin 20s linear infinite;
@@ -646,11 +748,25 @@ a[href^="tel"]::before {
 @keyframes spin {
 	100% { 
 		-webkit-transform: rotate(360deg); 
-		transform:rotate(360deg);
+		transform: rotate(360deg);
 	} 
 }
+
 .in-front {
 	z-index: 2;
 	position: absolute;
-	left: ;
 }
+
+.in-front-relative {
+	position: relative;
+	bottom: var(--big-icon-size);
+	right: 0;
+}
+
+.in-front-relative-2 {
+	position: relative;
+	bottom: calc(2 * var(--big-icon-size));
+	right: 0;
+}
+
+
