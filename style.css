@@ -16,6 +16,11 @@
 
 
 
+
+
+
+
+
 /* ---------------------- */
 /* ----- Global CSS ----- */
 /* ---------------------- */
@@ -105,6 +110,15 @@ a:hover {
 
 
 
+
+
+
+
+
+
+
+
+
 /* -------------------- */
 /* ----- Page CSS ----- */
 /* -------------------- */
@@ -122,7 +136,7 @@ a:hover {
 }
 
 /* Resize and organize as grid page part */
-header, footer, .main {display: grid}
+header, footer, .page > main {display: grid}
 
 .side-margin-15 {padding: 0 15% 0 15%}
 .anchor-position {padding-top: 6rem}
@@ -139,6 +153,14 @@ header, footer, .main {display: grid}
 		padding-right:1rem;
 	}
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -198,25 +220,38 @@ header a {font-variant: small-caps}
 	header nav a {padding: .5rem .5rem .5rem .5rem}
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ---------------------------- */
 /* ----- Page Content CSS ----- */
 /* ---------------------------- */
 
-.main {
+.page > main {
 	grid-area: main;
 	display: grid;
 	row-gap: 12rem;
 	top: -6rem;
 }
-.main h2 {margin-bottom: 6rem}
-.main div {display: grid}
+.page > main h2 {margin-bottom: 6rem}
+.page > main section {display: grid}
 
 @media only screen and (max-width: 950px) {
-	.main {row-gap: 12rem}
-	.main h2 {margin-bottom: 0}
+	.page > main {row-gap: 12rem}
+	.page > main h2 {margin-bottom: 0}
 }
 
-/*.main div {background-color: rgba(0,255,0,.2);} /* FIXME */
+/*main div {background-color: rgba(0,255,0,.2);} /* FIXME */
 
 /* --- About part --- */
 .satellite {padding: 2rem 0 4rem 0}
@@ -318,6 +353,16 @@ header a {font-variant: small-caps}
   }
 }
 
+
+
+
+
+
+
+
+
+
+
 /* --- History part --- */
 
 .history {
@@ -352,7 +397,7 @@ header a {font-variant: small-caps}
 /*.history_details {border-left: 2px solid greenyellow}*/
 
 /* History points */
-.history_details .history_element {
+.history article {
 	/* Transform as list to automatically display a list point */
 	/*display: list-item;
 	list-style: square;
@@ -363,10 +408,10 @@ header a {font-variant: small-caps}
 	grid-template-columns: calc(var(--history-point-size) + var(--history-point-margin)) 1fr; /* 30 = 10px margin right + 20px of width */
 	grid-template-rows: 1fr;
 	grid-template-areas:
-		"history_element_list .";
+		". .";
 
 }
-.history_element_list {
+.history nav {
 	margin-right: var(--history-point-margin);
 	width: var(--history-point-size);
 	display: grid;
@@ -390,13 +435,13 @@ header a {font-variant: small-caps}
 }
 
 /* History elem style */
-.history_element h5 {padding: .5rem 0 .5rem 0}
-.history_element h5 + ul {padding-bottom: 2rem} /* to select the ul just after h5 */
-.history_element p + ul + p {padding-top: 1rem}
-.history_details .history_element:not(:last-child) .history_element_content {margin-bottom: 4rem}
+.history article h5 {padding: .5rem 0 .5rem 0}
+.history article h5 + ul {padding-bottom: 2rem} /* to select the ul just after h5 */
+.history article p + ul + p {padding-top: 1rem}
+.history article:not(:last-child) .history_element_content {margin-bottom: 4rem}
 
 /* Take only the second li */
-.history_element .inline_li li+li:not(:last-child) {padding: 0 2rem 0 2rem}
+.history article .inline_li li+li:not(:last-child) {padding: 0 2rem 0 2rem}
 
 .history_element_content {
 	background-color: rgba(1, 10, 50, .3);
@@ -409,22 +454,30 @@ header a {font-variant: small-caps}
 .history_element_content ul li {padding-top: .4rem}
 
 
+
+
+
+
+
+
+
 /* --- Project part --- */
 /*.portfolio ul {margin-bottom: 20px}*/
 /*.project_list {margin-top: 6rem}*/
 .portfolio {margin-bottom: 12rem}
 
 
-.portfolio-rows {
+.portfolio main {
+	margin-top: 3.6em;
   display: grid; 
   grid-template-columns: 6em auto; 
   grid-template-rows: auto auto auto; 
   gap: 2.4em 0px; 
   grid-template-areas: 
-    "portfolio-row-title ."; 
+    ". ."; 
 }
 
-.portfolio-row-title {
+.portfolio nav {
   display: grid; 
   grid-template-columns: 1fr; 
   grid-template-rows: 1.2em 1fr; 
@@ -434,7 +487,7 @@ header a {font-variant: small-caps}
     "."; 
 }
 
-.portfolio-row-title h5 {text-align: center}
+.portfolio nav h5 {text-align: center}
 .vertical-line {
 	border: 1px solid greenyellow; /* FIXME Color to define */
 	top: var(--history-point-margin);
@@ -442,7 +495,7 @@ header a {font-variant: small-caps}
 	justify-self: center;
 }
 
-.portfolio-rows article {
+.portfolio article {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -451,25 +504,35 @@ header a {font-variant: small-caps}
   align-content: start
 	background-color: blue;
 }
-.portfolio-rows section {
+.portfolio section {
   display: block;
 }
 
-.portfolio-rows section img, .img-assembly{
+.portfolio section img, .portfolio figure {
   margin: auto;
   display: block;
 	height: var(--big-icon-size);
 	width: var(--big-icon-size);
 }
 
-.portfolio-rows section div {
+.portfolio section div {
 	width: calc(1.5 * var(--big-icon-size));
 	text-align: center
 }
-.portfolio-rows section h5 {
+.portfolio section h5 {
 	margin: .9em 0 .6em 0;
 	text-decoration: underline;
 }
+/*.portfolio-row-title h5 {
+	border: 1px solid greenyellow;
+	border-radius: calc(var(--history-point-size) / 2);
+}*/
+
+
+
+
+
+
 
 
 /* ---------------------- */
@@ -521,8 +584,22 @@ footer img {
 	padding: 10%;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ---------------------- */
-/* ----- Random CSS ----- */
+/* ----- ANIMATIONS ----- */
 /* ---------------------- */
 /*
 a[href^="https"]::before {
@@ -716,12 +793,17 @@ a[href^="tel"]::before {
 }
 
 
-.blinking{
+.blinking {
 	-webkit-animation: blinking 3s ease-in-out 0s infinite;
 	-moz-animation: blinking 3s ease-in-out 0s infinite;
 	animation: blinking 3s ease-in-out 0s infinite;
 }
-.img-assembly img:nth-child(2) { animation-delay: 1s }
+.blinking-2 {
+	-webkit-animation: blinking 3.5s ease-in-out 0s infinite;
+	-moz-animation: blinking 3.5s ease-in-out 0s infinite;
+	animation: blinking 3.5s ease-in-out 0s infinite;
+}
+.portfolio-rows figure img:nth-child(2) { animation-delay: .5s }
 
 @keyframes blinking {
 	0% { 
@@ -770,3 +852,12 @@ a[href^="tel"]::before {
 }
 
 
+/*
+	Stars particles CSS
+	https://codepen.io/saransh/pen/BKJun
+*/
+/* 
+	DESIGN PRINCIPLES
+	- https://uxdesign.cc/7-principles-of-icon-design-e7187539e4a2
+	https://miro.medium.com/max/2000/1*a-zerv-uouThOe0ItxW8bQ@2x.png 
+*/
