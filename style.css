@@ -154,6 +154,32 @@ header, footer, .page > main {display: grid}
 	}
 }
 
+.stars-background-container {
+	position: fixed;
+	top: 0;
+	left:0;
+	bottom: 0;
+	right: 0;
+	/*  
+		TODO : change opacity on scrolling
+	*/
+}
+
+.stars {
+	background: url("img/stars.png") repeat;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: block;
+	z-index: 0;
+	/*
+		TODO : 
+		- add twinkle
+		- add parallax effect
+	*/
+}
 
 
 
