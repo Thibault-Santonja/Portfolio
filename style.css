@@ -133,8 +133,10 @@ a:hover {
 	"header header"
 	"main main"
 	"footer footer";
-	/*background: linear-gradient(175deg, rgba(0, 0, 0, 0), rgba(0, 15, 25, 0.05), rgba(1, 10, 45, 0.10), rgba(12, 22, 64, 0.25), rgba(32, 53, 133, 0.5), rgba(130, 169, 181, 0.9), #D0E0FA);*/
 }
+
+.stars {background-image: url("img/stars.png")}
+.stars-gradient {background: linear-gradient(175deg, rgba(0, 0, 0, 0), rgba(0, 15, 25, 0.1), rgba(1, 10, 45, 0.2), rgba(12, 22, 64, 0.4), rgba(32, 53, 133, 0.6), rgba(130, 169, 181, 0.9), #D0E0FA)}
 
 /* Resize and organize as grid page part */
 header, footer, .page > main {
@@ -156,33 +158,6 @@ header, footer, .page > main {
 		padding-left:1rem;
 		padding-right:1rem;
 	}
-}
-
-.stars-background-container {
-	position: fixed;
-	top: 0;
-	left:0;
-	bottom: 0;
-	right: 0;
-	/*  
-		TODO : change opacity on scrolling
-	*/
-}
-
-.stars {
-	background: url("img/stars.png") repeat;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	display: block;
-	z-index: 0;
-	/*
-		TODO : 
-		- add twinkle
-		- add parallax effect
-	*/
 }
 
 
